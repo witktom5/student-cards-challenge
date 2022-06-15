@@ -23,6 +23,8 @@ const students = [
 
 const cardContainer = document.querySelector('.card-container');
 
+// add student cards
+
 const addCards = () => {
   for (let student of students) {
     const card = document.createElement('div');
@@ -48,7 +50,7 @@ const addCards = () => {
 
     // Add border conditionally
 
-    if (average < 5) card.style.border = 'solid 1px red';
+    if (average <= 5) card.style.border = 'solid 1px red';
     if (average > 5) card.style.border = 'solid 1px green';
 
     // Add elements to DOM
@@ -64,7 +66,8 @@ const addCards = () => {
 
 addCards();
 
-//  Onclick on the cards
+//  Onclick on the cards - activate/deactivate cards
+
 const allCards = document.querySelectorAll('.card');
 
 function changeColorOnClick() {
@@ -79,6 +82,8 @@ function changeColorOnClick() {
     this.style.backgroundColor = 'white';
   }
 }
+
+//  Add event listener
 
 for (let card of allCards) {
   card.addEventListener('click', changeColorOnClick);
